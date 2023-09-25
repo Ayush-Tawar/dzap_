@@ -60,6 +60,8 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
     });
 
     setInputValue(uniqueLines.join('\n'));
+    console.log(showOptions)
+    setShowOptions(false)
   };
 
   const handleCombineBalances = () => {
@@ -82,6 +84,7 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
 
     const combinedLines = Object.entries(addressToBalanceMap).map(([address, balance]) => `${address}=${balance}`);
     setInputValue(combinedLines.join('\n'));
+    setShowOptions(false)
   };
 
   const validateInput = () => {
