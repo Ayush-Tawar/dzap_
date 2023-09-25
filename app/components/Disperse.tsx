@@ -19,7 +19,7 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
     const lines = inputValue.split('\n');
     setLineCount(lines.length);
     setErrors([]);
-    // findDuplicateAddresses(lines);
+    findDuplicateAddresses(lines);
   }, [inputValue]);
 
   const findDuplicateAddresses = (lines: string[]) => {
@@ -60,7 +60,6 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
     });
 
     setInputValue(uniqueLines.join('\n'));
-    console.log(showOptions)
     setShowOptions(false)
   };
 
@@ -128,7 +127,6 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
 
 
     setErrors(newErrors);
-    console.log("new errors", newErrors)
 
     if (newErrors.length === 0) {
       // No errors, show options for duplicate handling
