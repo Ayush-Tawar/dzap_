@@ -135,7 +135,7 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
   };
 
   return (
-    <div className="w-full flex flex-col justify-center align-center">
+    <div className="w-full h-full flex flex-col justify-center align-center">
       <div className="pb-8 w-full flex justify-between">
         <p>Address with Amounts</p>
         <p>Upload File</p>
@@ -148,7 +148,7 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
         </div>
         <div className="height-full divider"></div>
         <textarea
-          className="textarea bg-black w-full h-5/6 focus:outline-none"
+          className="textarea h-auto overflow-y-hidden bg-black w-full h-5/6 focus:outline-none"
           rows={10}
           cols={40}
           value={inputValue}
@@ -164,7 +164,7 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
           }}
         />
       </div>
-      <div className=' flex flex-col'>
+      <div className=' flex flex-col justify-end'>
         <div className="pt-8 w-full flex justify-between">
           <p>Separated by ',' or '' or '='</p>
           <p className="text-neutral-400">Show Example</p>
