@@ -3,11 +3,19 @@
 @tailwind utilities;
 
 body {
-  color: #fff;  
+  color: #fff;
 
 }
 
-.divider{
+
+
+.divider {
   border: 1px solid rgb(91, 89, 89);
   margin: 0 10px;
+}
+
+.submitButton {
+
+  background: rgb(197, 115, 253);
+  background: linear-gradient(94deg, rgba(197, 115, 253, 1) 0%, rgba(124, 91, 218, 1) 100%);
 }

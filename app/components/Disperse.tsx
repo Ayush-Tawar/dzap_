@@ -116,15 +116,16 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
 
   return (
     <div className='w-full flex flex-col justify-center align-center' >
+      <div className='pb-8 w-full flex justify-between'><p>Address with Amounts</p> <p>Upload File</p></div>
       <div className='w-full flex bg-black p-5 '>
-        <div className="flex felx-col">
+        <div className="flex flex-col">
           {Array.from({ length: lineCount }, (_, index) => (
             <span key={index}>{index + 1}</span>
           ))}
         </div>
         <div className='height-full divider	'></div>
         <textarea
-          className='textarea bg-black w-full h-5/6	'
+          className='textarea bg-black w-full h-5/6 focus:outline-none 	'
           rows={10} // Adjust the number of rows as needed
           cols={40}
           value={inputValue}
@@ -142,7 +143,8 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
         />
       </div>
       <div>
-        <div className={`errors text-red-700	 ${errors.length > 0 ? 'show-errors' : ''}`}>
+        <div className='pt-8 w-full flex justify-between'><p>Seperated by ',' or '' or '='</p> <p className='text-neutral-400	'>Show Example</p></div>
+        <div className={`errors text-red-700	 ${errors.length > 0 ? 'show-errors border-2 border-red-500 p-2 mt-5' : ''}`}>
           {errors.map((error, index) => (
             <div key={index} className="error">
               Line {error.line}: {error.message}
@@ -159,11 +161,13 @@ const Disperse: React.FC<DisperseProps> = ({ initialValue = '' }) => {
                 </span>
               ))}
             </p>
-            <button onClick={() => handleOptionChange('keepFirst')}>Keep the first one</button>
-            <button onClick={() => handleOptionChange('combineBalances')}>Combine balances</button>
+            <div className='mt-10 flex justify-between w-3/12 self-end'>
+              <button className='text-red-700' onClick={() => handleOptionChange('keepFirst')}>Keep the first one</button>
+              <button className='text-red-700' onClick={() => handleOptionChange('combineBalances')}>Combine balances</button>
+            </div>
           </div>
         )}
-        <button className='w-full rounded-full bg-violet-700 mt-24 h-12 	' onClick={validateInput}>Next</button>
+        <button className=' submitButton w-full rounded-full bg-violet-700 mt-24 h-12 	' onClick={validateInput}>Next</button>
       </div>
     </div>
   );
